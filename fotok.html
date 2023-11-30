@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Majoross Botond">
+    <meta name="copyright" content="Ismeretterjesztő célra">
+    <meta name="description" content="A jégkorong bemutatása">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="kepek/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Jégkorong</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/classic/galleria.classic.min.js"></script>
+
+    <script>
+        function sotet(){
+        document.getElementById("oldal").style.backgroundColor = "black";
+        document.getElementById("oldal").style.color = "white";
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('#images').galleria({
+        width:900,
+        height:650
+        });
+        });
+    </script>
+
+    <style>
+        .galleria-container {margin:auto;}
+    </style>
+</head>
+
+<body id = "oldal">
+    <header>        
+        <form action=""><input class="sotetgomb" type="button" onClick="sotet()" value="Sötét mód"></form>
+        <h1>Jégkorong</h1>
+    </header> 
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">A jégkorongról</a></li>
+            <li><a href="siker.html">A magyar világsiker</a></li>
+            <li><a class="active" href="#">Fotók</a></li>
+            <li><a href="jatek.html">Nyereményjáték</a></li>
+        </ul>  
+    </nav>
+    
+    <hr id="valaszto">
+    <div class="container">
+        <article id="images">
+            <img src="kepek/nhl2.jpg" alt="Carry Price hatalmas védése Ottawa ellen 2023" title="Carry Price">
+            <img src="kepek/nhl3.jpg" alt="Verekedés egy meccs közben" title="Bunyó">
+            <img src="kepek/nhl5.jpg" alt="A Vegas Golden Knights csapata a döntő dudaszó után" title="A Vegas Golden Knights döntő 2023">
+            <img src="kepek/vegas.jpg" alt="A Vegas Golden Knights csapatképe az NHL győzelem után" tabindex="VGK csapatkép">
+            <img src="kepek/nhl6.jpg" alt="A Vegas Golden Knights csoportképe stábtagokkal az NHL győzelem után" title="VGK csapatkép stábbal">
+            <img src="kepek/nhl7.jpg" alt="Alex Ovechkin gólja Montral ellen 2022" title="Alex Ovechkin">
+            <img src="kepek/szap3.jpg" alt="A szapporói győzelem" title="Szapporó 2008">
+            <img src="kepek/szapporo.jpg" alt="A szapporói díjátadás utáni ünneplés" title="Szapporói díjátadás">
+            <img src="kepek/ma1.jpg" alt="A magyar válogatott győzelme Ausztria ellen" title="Magyar válogatott vs. Ausztria 2022">
+            <img src="kepek/ma2.jpg" alt="A magyar himnusz éneklése a 2023-as VB-n" title="Felcsendül a magyar himnusz a 2023-as VB-n">
+            <img src="kepek/ma3.jpg" alt="A 2022-es feljutás" title="Magyarország feljutása 2022">
+        </article>
+        <footer>
+                <h4>Kapcsolat</h4>       
+                <p>Majoross Botond</p>
+                <p>Email: kapcsolat@gmail.com</p>
+                <p>Telefon: 06 30 123 4567</p>              
+        </footer>
+    </div>
+</body>
+</html>

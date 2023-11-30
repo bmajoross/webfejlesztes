@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Majoross Botond">
+    <meta name="copyright" content="Ismeretterjesztő célra">
+    <meta name="description" content="A jégkorong bemutatása">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="kepek/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Jégkorong</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
+<script>
+    function sotet(){
+    document.getElementById("oldal").style.backgroundColor = "black";
+    document.getElementById("oldal").style.color = "white";
+
+    }
+    </script>
+<script>
+$(document).ready(function(){
+    $("#myform").validate({
+        rules : {
+            nev : {
+                required : true
+            },
+            szuletes : {
+                required : true
+            },
+            telszam : {
+                required : true,
+                minlength : 11,
+            },
+            emailcim : {
+                required : true,
+                email : true
+            },
+            vel :{
+                required : true
+            }
+        },
+
+        messages: {
+            nev : " Nem adott meg nevet!",
+            szuletes : " Add meg a születési dátumot!",
+            telszam : {
+                 required : " Nem adott meg telefonszámot!",
+                 minlength : " Ellenőrizze a telefonszám helyességét!"
+
+                }, 
+            emailcim : {
+                required : " Nem adta meg az e-mail címét!",
+                email : " Ellenőrizze az email cím helyességét!",
+                },
+            vel : "Kérjük írjon véleményt!"
+            }
+    });
+});
+</script>
+
+</head>
+<body id = "oldal">
+    <header>        
+        <form><input class="sotetgomb" type="button" onClick="sotet()" value="Sötét mód"></form>
+        <h1>Jégkorong</h1>
+    </header> 
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">A jégkorongról</a></li>
+            <li><a href="siker.html">A magyar világsiker</a></li>
+            <li><a href="fotok.html">Fotók</a></li>
+            <li><a class="active" href="#">Nyereményjáték</a></li>
+        </ul>  
+    </nav>
+    
+    <hr id="valaszto">
+    <div class="container">
+        <article class="urlap"> 
+        <form method="post" action="http://szamtud.uni-corvinus.hu/receive.php" id="myform" novalidate>
+        
+        <h2>Nyereményjáték</h2>
+        <p>A játékosok között kisorsolunk nyereményeket!</p> 
+        
+        <p>Egyszerre hány játékos lehet a jégen?<br>
+        <label><input type="radio" name="hanyan" value="15">15</label><br>
+        <label><input type="radio" name="hanyan" value="10">10</label><br>
+        <label><input type="radio" name="hanyan" value="12" id="elso">12</label></p>
+
+
+        <p>Az első jégkorong egyesületet 1880-ban alakították.<br>
+        <label><input type="radio" name="alapitas" value="igaz" id="masodik">Igaz</label><br>
+        <label><input type="radio" name="alapitas" value="hamis"> Hamis</label></p>
+
+        <p><label>Mely csapat nem volt az NHL első benevezései között?
+            <select name="nemnevezett" >
+                <option value="montreal">Montreal Canadiens</option>
+                <option value="boston" id="harmadik">Boston Bruins</option>
+                <option value="ottawa">Ottawa Club</option>
+            </select></label></p>
+
+        <p>Ki nem volt a 2008-as szapporói hősök tagja?<br>
+        <label><input type="checkbox" name="szuper" value="igen" id="szuper">Szuper Levente</label> <br>
+        <label><input type="checkbox" name="sille" value="igen" id="sille">Sille Tamás</label> <br>
+        <label><input type="checkbox" name="marton" value="igen" id="marton">Marton Tibor</label> <br>
+        <label><input type="checkbox" name="majoross" value="igen" id="majoross">Majoross Gergely</label></p>
+
+        <p><label>Mennyire tartja a jégkorongot kűzdősportnak? (Szubjektív) <br>
+            1<input type="range" name="kuzdosport" min="1" max="5" step="1" value="3">5 </label></p>
+
+        <p><label>Vélemény a sportról, illetve a weboldalról: <br>
+        <textarea name="vel"  cols="40" rows="10" placeholder="Ide írja a véleményét!" id="velemeny"></textarea></label></p>
+
+        <p>Beküldő adatai:</p> 
+
+        <p><label><em>Név:</em><input type="text" name="nev" size="30" id="nev"></label></p>
+
+        <p><label><em>Neme:</em> &nbsp;
+            <select name="nem">
+                <option value="ferfi">Férfi</option>
+                <option value="no">Nő</option>
+                <option value="egyeb">Egyéb</option>
+            </select></label></p>
+
+        <p><label><em>Születési dátum:</em> &nbsp; <input type="date" name="szuletes" id="szuletes"></label></p>
+
+        <p><label><em>Telefonszám:</em><input type="tel" name="telszam" placeholder="06-" maxlength="11" id="telszam"></label></p>
+
+        <p><label><em>Email cím:</em> <input type="email" name="emailcim" size="25" placeholder="email" id="emailcim"></label></p>
+
+        <p><label><em>Szeretnék emailben értesülni a közelgő eseményekről</em><input type="checkbox" name="hirlevel" value="igen" checked></label></p>
+
+        <input type="submit" value="Beküldés" id="mybutton">
+        <input type="reset" value="Alaphelyzet">
+
+    </form>
+        </article>
+        <footer>
+                <h4>Kapcsolat</h4>       
+                <p>Majoross Botond</p>
+                <p>Email: kapcsolat@gmail.com</p>
+                <p>Telefon: 06 30 123 4567</p>
+                
+        </footer>
+    </div>
+    <script src="js/myscript.js"></script>
+
+</body>
+</html>
